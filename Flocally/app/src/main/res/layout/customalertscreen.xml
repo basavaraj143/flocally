@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#d0000000"
+    android:weightSum="100">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_weight="10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:text="Homemade chicken curry served with aloo mattar,3rotis,rice,salad,raita and acher"
+        android:textColor="#fff">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:layout_marginTop="30dp"
+        android:layout_weight="20"
+        android:weightSum="100"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:layout_weight="20"
+            android:id="@+id/location"
+            android:layout_gravity="left"
+            android:src="@drawable/orangeloc"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="40"
+            android:src="@drawable/scooter"/>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="25"
+            android:src="@drawable/bag"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:layout_weight="20"
+        android:weightSum="100"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:clickable="true"
+            android:id="@+id/distance"
+            android:layout_weight="30"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="5dp"
+            android:text="1.5km away"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="30"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_horizontal"
+            android:text="delievery available"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="30"
+            android:layout_marginLeft="20dp"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:text="pick up available"
+           />
+
+    </LinearLayout>
+
+
+</LinearLayout>

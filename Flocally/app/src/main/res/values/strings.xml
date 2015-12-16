@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Flocally</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">action search</string>
+    <string name="title_activity_dummy">Dummy</string>
+    <string name="title_activity_lunch__view">Lunch_View</string>
+    <string name="title_activity_snacks_view">SnacksView</string>
+</resources>

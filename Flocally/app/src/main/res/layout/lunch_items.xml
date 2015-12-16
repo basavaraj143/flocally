@@ -1,11 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<LinearLayout
     android:layout_width="fill_parent"
     android:background="#fff"
     android:orientation="vertical"
     android:layout_height="fill_parent"
     android:weightSum="100"
     >
+
+
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -126,6 +134,8 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:background="@drawable/biriyani"/>-->
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -188,7 +198,9 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/bag"/>
 
+
         </LinearLayout>
+
 
     </LinearLayout>
 
@@ -199,16 +211,16 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:gravity="top"
+        android:id="@+id/cart"
         android:layout_weight="10"
         android:orientation="horizontal"
         android:weightSum="10">
-
-        <ImageView
+      <!--  <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/profile"
             android:background="@drawable/smile"/>
-
+-->
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -264,6 +276,8 @@
             android:layout_gravity="center"
             android:id="@+id/removeFromCart"
             android:background="@drawable/minus"/>
+
+
     </LinearLayout>
 
 
@@ -323,7 +337,11 @@
         android:gravity="top"
         android:layout_weight="20"
         android:orientation="horizontal">
+
     </LinearLayout>
 
 
 </LinearLayout>
+
+
+    </android.support.design.widget.CoordinatorLayout>

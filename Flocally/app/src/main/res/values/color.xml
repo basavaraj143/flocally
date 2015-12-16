@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="tabBackground">#e71212</color>
     <color name="transf">#050555</color>
+    <color name="black">#000</color>
+    <color name="orange">#FA0</color>
+    <color name="white">#FFF</color>
+
 </resources>

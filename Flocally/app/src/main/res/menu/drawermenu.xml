@@ -4,19 +4,20 @@
 
 
     <item android:title="Breakfast"
-          android:id="@+id/nav_item_inbox"
-          android:icon="@drawable/inbox"/>
+          android:id="@+id/nav_item_breakfast"
+          android:icon="@drawable/arrow"/>
 
     <item android:title="Lunch"
-          android:id="@+id/nav_item_sent"
-          android:icon="@drawable/sent"/>
+          android:id="@+id/nav_item_lunch"
+          android:icon="@drawable/arrow"/>
 
     <item android:title="Snack"
-          android:id="@+id/nav_item_draft"
-          android:icon="@drawable/draft"/>
-    <item android:title="Dinner"
+          android:id="@+id/nav_item_snacks"
+          android:icon="@drawable/arrow"/>
+    <item
         android:id="@+id/dinner"
-        android:icon="@drawable/draft"/>
+        android:icon="@drawable/arrow"
+        android:title="Dinner" />
 
 
 

@@ -19,16 +19,19 @@ public class TabFragment extends Fragment {
     public static TabLayout tabLayout;
     public static ViewPager viewPager;
     public static int int_items = 4 ;
-
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         /**
          *Inflate tab_layout and setup Views.
          */
-            View x =  inflater.inflate(R.layout.tab_layout,null);
+
+            View x =  inflater.inflate(R.layout.tab_layout, null);
             tabLayout = (TabLayout) x.findViewById(R.id.tabs);
-            viewPager = (ViewPager) x.findViewById(R.id.viewpager);
+
+
+        viewPager = (ViewPager) x.findViewById(R.id.viewpager);
 
         /**
          *Set an Apater for the View Pager
@@ -43,14 +46,23 @@ public class TabFragment extends Fragment {
 
         tabLayout.post(new Runnable() {
             @Override
-            public void run() {
-                    tabLayout.setupWithViewPager(viewPager);
-                   }
+            public void run()
+            {
+                //tabLayout.setupWithViewPager(viewPager);
+                selectPage(1);
+            }
         });
 
         return x;
 
     }
+    public static void selectPage(int pageIndex)
+    {
+        viewPager.setCurrentItem(pageIndex);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+
 
     class MyAdapter extends FragmentPagerAdapter {
 
@@ -65,7 +77,8 @@ public class TabFragment extends Fragment {
         @Override
         public Fragment getItem(int position)
         {
-          switch (position){
+          switch (position)
+          {
               case 0 : return new BreakFastFragment();
               case 1 : return new LunchFragment();
               case 2 : return new SnackFragment();
@@ -88,7 +101,9 @@ public class TabFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
 
-            switch (position){
+            switch (position)
+            {
+
                 case 0 :
                     return "BREAKFAST";
                 case 1 :
@@ -101,5 +116,28 @@ public class TabFragment extends Fragment {
                 return null;
         }
     }
+
+
+   /* static TabFragment newInstance(final int position)
+    {
+        TabFragment swipeFragment = new TabFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("position", position);
+        swipeFragment.setArguments(bundle);
+        viewPager.setCurrentItem(position);
+        tabLayout.setupWithViewPager(viewPager);
+
+        //tabLayout.notify();
+       *//* tabLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                //tabLayout.setupWithViewPager(viewPager);
+                selectPage(position);
+            }
+        });*//*
+
+        return swipeFragment;
+    }
+*/
 
 }

@@ -1,7 +1,5 @@
 package com.example.appsriv_02.flocally;
 
-import android.app.SearchManager;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -9,10 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.SearchView;
 
 public class MainTabActivity extends AppCompatActivity {
     DrawerLayout mDrawerLayout;
@@ -31,7 +26,10 @@ public class MainTabActivity extends AppCompatActivity {
          */
 
              mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
-             mNavigationView = (NavigationView) findViewById(R.id.shitstuff) ;
+             mNavigationView = (NavigationView) findViewById(R.id.shitstuff);
+      //  Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+      //  setSupportActionBar(toolbar);
+
 
         /**
          * Lets inflate the very first fragment
@@ -45,25 +43,33 @@ public class MainTabActivity extends AppCompatActivity {
          * Setup click events on the Navigation View Items.
          */
 
-             mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+             mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener()
+             {
                  @Override
-                 public boolean onNavigationItemSelected(MenuItem menuItem) {
+                 public boolean onNavigationItemSelected(MenuItem menuItem)
+                 {
                      mDrawerLayout.closeDrawers();
 
 
-                     if (menuItem.getItemId() == R.id.nav_item_sent) {
+                     if (menuItem.getItemId() == R.id.nav_item_breakfast)
+                     {
                          FragmentTransaction fragmentTransaction = mFragmentManager.beginTransaction();
-                         fragmentTransaction.replace(R.id.containerView, new LunchFragment()).commit();
+                         fragmentTransaction.replace(R.id.containerView, new TabFragment().newInstance(3)).commit();
+
+                        // fragmentTransaction.replace(R.id.containerView, getActionBar().addTab()).commit();
 
                      }
 
-                     if (menuItem.getItemId() == R.id.nav_item_inbox) {
+                     if (menuItem.getItemId() == R.id.nav_item_lunch)
+                     {
                          FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                          xfragmentTransaction.replace(R.id.containerView, new BreakFastFragment()).commit();
                      }
-                     if (menuItem.getItemId() == R.id.nav_item_draft) {
+                     if (menuItem.getItemId() == R.id.nav_item_snacks)
+                     {
                          FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
                          xfragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+
                      }
 
                      return false;
@@ -78,12 +84,19 @@ public class MainTabActivity extends AppCompatActivity {
                 android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
                 ActionBarDrawerToggle mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout, toolbar,R.string.app_name,
                 R.string.app_name);
-
+       // ImageView imageView =(ImageView)toolbar.findViewById(R.id.dummy);
+        /*imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"taq for clicking me " ,Toast.LENGTH_SHORT).show();
+            }
+        });
+*/
                 mDrawerLayout.setDrawerListener(mDrawerToggle);
-
                 mDrawerToggle.syncState();
 
     }
+
 /*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -102,20 +115,5 @@ public class MainTabActivity extends AppCompatActivity {
     }*/
 
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
 
-        MenuItem searchItem = menu.findItem(R.id.action_search);
-
-        SearchManager searchManager = (SearchManager) MainTabActivity.this.getSystemService(Context.SEARCH_SERVICE);
-
-        SearchView searchView = null;
-        if (searchItem != null) {
-            searchView = (SearchView) searchItem.getActionView();
-        }
-        if (searchView != null) {
-            searchView.setSearchableInfo(searchManager.getSearchableInfo(MainTabActivity.this.getComponentName()));
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
 }

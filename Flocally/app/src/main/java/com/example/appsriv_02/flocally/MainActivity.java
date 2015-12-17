@@ -5,12 +5,14 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
+import android.widget.TextView;
 
 public class MainActivity extends TabActivity  implements
         ActionBar.TabListener {
@@ -32,7 +34,7 @@ public class MainActivity extends TabActivity  implements
        // actionBar=getActionBar();
         viewPager = (ViewPager) findViewById(R.id.pager);
 
-       /* tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+ tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 
             @Override
             public void onTabChanged(String tabId) {
@@ -49,7 +51,8 @@ public class MainActivity extends TabActivity  implements
                 tv.setTextColor(Color.parseColor("#000000"));
 
             }
-        });*/
+        });
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
       //  actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         getActionBar().setDisplayShowTitleEnabled(false);
@@ -58,7 +61,7 @@ public class MainActivity extends TabActivity  implements
         TabSpec inboxSpec = tabHost.newTabSpec(INBOX_SPEC);
         // Tab Icon
         inboxSpec.setIndicator(INBOX_SPEC);
-        Intent inboxIntent = new Intent(this, SnacksView.class);
+        Intent inboxIntent = new Intent(this, Lunch_View.class);
         // Tab Content
         inboxSpec.setContent(inboxIntent);
 
@@ -66,13 +69,13 @@ public class MainActivity extends TabActivity  implements
         TabSpec outboxSpec = tabHost.newTabSpec(OUTBOX_SPEC);
        // outboxSpec.setIndicator(OUTBOX_SPEC, getResources().getDrawable(R.drawable.icon_outbox));
         outboxSpec.setIndicator(OUTBOX_SPEC);
-        Intent outboxIntent = new Intent(this, SnacksView.class);
+        Intent outboxIntent = new Intent(this, Lunch_View.class);
         outboxSpec.setContent(outboxIntent);
 
         // Profile Tab
         TabSpec profileSpec = tabHost.newTabSpec(PROFILE_SPEC);
         profileSpec.setIndicator(PROFILE_SPEC);
-        Intent profileIntent = new Intent(this, SnacksView.class);
+        Intent profileIntent = new Intent(this, Lunch_View.class);
         profileSpec.setContent(profileIntent);
 
 
@@ -90,9 +93,6 @@ public class MainActivity extends TabActivity  implements
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
-            /**
-             * on swipe select the respective tab
-             * */
             @Override
             public void onPageSelected(int position) {
                 actionBar.setSelectedNavigationItem(position);

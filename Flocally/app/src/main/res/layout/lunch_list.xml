@@ -11,7 +11,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:background="#fff"
-        android:layout_weight="85"
+        android:layout_weight="90"
         >
     <ListView
         android:id="@+id/lunchList"
@@ -23,7 +23,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_weight="15"
+        android:layout_weight="10"
         android:background="#ccc"
        >
         <ImageView
